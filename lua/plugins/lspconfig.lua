@@ -28,12 +28,13 @@ return {
       lsp_config.ruff.setup({
         capabilities = capabilities,
       })
-      lsp_config.eslint_lsp.setup({
-        capabilities = capabilities
+      lsp_config.eslint.setup({
+        capabilities = capabilities,
       })
 
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
+      vim.keymap.set("n", "gc", vim.lsp.buf.declaration, {})
       vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
     end,
   },
